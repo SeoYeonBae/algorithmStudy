@@ -1,3 +1,5 @@
+# CLASS_2 2839 설탕 배달
+
 N = int(input())
 result = 0
 
