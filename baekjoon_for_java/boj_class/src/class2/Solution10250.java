@@ -1,4 +1,4 @@
-// CLASS_2 10250 ACM 호텔
+//CLASS_2 10250 ACM 호텔
 
 package class2;
 
