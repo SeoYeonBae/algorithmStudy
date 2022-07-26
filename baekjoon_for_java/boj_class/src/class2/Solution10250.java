@@ -25,5 +25,6 @@ public class Solution10250 {
 				System.out.println(((N % H) * 100) + ((N / H) + 1));
 		}
 	}
+	
 }
 
