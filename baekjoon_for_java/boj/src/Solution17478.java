@@ -1,8 +1,9 @@
+// 0801 문제풀이 17478 재귀함수가 뭔가요?
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-// 0801 문제풀이 17478 재귀함수가 뭔가요?
 
 public class Solution17478 {
 	
