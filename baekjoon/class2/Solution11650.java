@@ -1,6 +1,6 @@
 // CLASS_2 11650 좌표 정렬하기
 
-package class2;
+package algorithmStudy.baekjoon.class2;
 
 import java.io.BufferedReader;
 import java.io.IOException;

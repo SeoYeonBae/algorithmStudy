@@ -1,6 +1,6 @@
 // CLASS_2 7568 덩치
 
-package class2;
+package algorithmStudy.baekjoon.class2;
 
 import java.io.*;
 import java.util.StringTokenizer;

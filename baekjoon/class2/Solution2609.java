@@ -1,6 +1,6 @@
 // CLASS_2 2609 최대공약수와 최소공배수
 
-package class2;
+package algorithmStudy.baekjoon.class2;
 
 import java.io.BufferedReader;
 import java.io.IOException;

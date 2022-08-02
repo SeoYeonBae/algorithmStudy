@@ -1,5 +1,7 @@
 // D3 1289 원재의 메모리 복구하기
 
+package algorithmStudy.swea.D3;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
