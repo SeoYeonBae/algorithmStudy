@@ -6,8 +6,6 @@ import java.io.InputStreamReader;
 
 public class Solution_1954_달팽이숫자 {
 
-	
-
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		int T = Integer.parseInt(in.readLine());
