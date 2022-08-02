@@ -1,4 +1,4 @@
-package algorithmStudy.swea.D4;
+package swea.D4;
 
 import java.io.BufferedReader;
 import java.io.IOException;

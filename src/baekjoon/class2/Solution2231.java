@@ -1,6 +1,6 @@
 // CLASS_2 2231 분해합
 
-package algorithmStudy.baekjoon.class2;
+package baekjoon.class2;
 
 import java.io.BufferedReader;
 import java.io.IOException;

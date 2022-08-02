@@ -1,6 +1,6 @@
 // CLASS_2 2869 달팽이는 올라가고 싶다
 
-package algorithmStudy.baekjoon.class2;
+package baekjoon.class2;
 
 import java.io.BufferedReader;
 import java.io.IOException;

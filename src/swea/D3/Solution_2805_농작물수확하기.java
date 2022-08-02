@@ -1,4 +1,4 @@
-package algorithmStudy.swea.D3;
+package swea.D3;
 
 import java.io.*;
 

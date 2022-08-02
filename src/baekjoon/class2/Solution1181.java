@@ -1,6 +1,6 @@
 // CLASS_2 1181 단어정렬
 
-package algorithmStudy.baekjoon.class2;
+package baekjoon.class2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

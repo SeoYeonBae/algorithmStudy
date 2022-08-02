@@ -1,4 +1,4 @@
-package algorithmStudy.baekjoon;
+package baekjoon;
 
 // 0801 문제풀이 1244 스위치 켜고 끄기
 

@@ -1,6 +1,6 @@
 // CLASS_2 10250 ACM 호텔
 
-package algorithmStudy.baekjoon.class2;
+package baekjoon.class2;
 
 import java.io.BufferedReader;
 import java.io.IOException;

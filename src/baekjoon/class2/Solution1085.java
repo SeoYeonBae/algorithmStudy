@@ -1,6 +1,6 @@
 // CLASS_2 1085 직사각형에서 탈출
 
-package algorithmStudy.baekjoon.class2;
+package baekjoon.class2;
 
 import java.io.BufferedReader;
 import java.io.IOException;

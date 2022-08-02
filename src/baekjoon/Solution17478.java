@@ -1,4 +1,4 @@
-package algorithmStudy.baekjoon;
+package baekjoon;
 
 // 0801 문제풀이 17478 재귀함수가 뭔가요?
 
