@@ -25,7 +25,7 @@ public class Main_11659_구간합구하기4 {
 			st = new StringTokenizer(in.readLine(), " ");
 			start = Integer.parseInt(st.nextToken());
 			end = Integer.parseInt(st.nextToken());
-			sb.append(prefixSum(pSum, start, end)).append("\n");
+			sb.append(prefixSum(pSum, Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()))).append("\n");
 		}
 		System.out.println(sb);
 	}
