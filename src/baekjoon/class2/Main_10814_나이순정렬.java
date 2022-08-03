@@ -15,11 +15,13 @@ public class Main_10814_나이순정렬 {
 		StringTokenizer st;
 		StringBuilder sb = new StringBuilder();
 		String[][] people = new String[N][2];
+		
 		for(int i = 0; i < N; i++) {
 			st = new StringTokenizer(in.readLine(), " ");
 			people[i][0] = st.nextToken();
 			people[i][1] = st.nextToken();
 		}
+		
 		Arrays.sort(people, new Comparator<String[]>() {
 			public int compare(String[] o1, String[] o2) {
 				return Integer.parseInt(o1[0]) - Integer.parseInt(o2[0]); 
