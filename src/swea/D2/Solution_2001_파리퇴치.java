@@ -44,4 +44,5 @@ public class Solution_2001_파리퇴치 {
             res += (pSum[i][c2] - pSum[i][c1 - 1]);
         return res;
     }
+    
 }
