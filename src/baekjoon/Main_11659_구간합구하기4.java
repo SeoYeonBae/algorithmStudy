@@ -33,4 +33,5 @@ public class Main_11659_구간합구하기4 {
 	private static int prefixSum(int[] pSum, int start, int end) {
 		return pSum[end] - pSum[start - 1];
 	}
+	
 }
