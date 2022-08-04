@@ -18,6 +18,7 @@ public class Solution_1218_괄호짝짓기 {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		
 		for (int tc = 1; tc <= 10; tc++) {
+			
 			sb.append("#").append(tc).append(" ");
 			N = Integer.parseInt(in.readLine());
 			input = in.readLine();
