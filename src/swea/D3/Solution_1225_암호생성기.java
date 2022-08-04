@@ -14,6 +14,7 @@ public class Solution_1225_암호생성기 {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		StringTokenizer st;
+		
 		for(int tc = 1; tc <= 10; tc++) {
 			int cnt = 1;
 			int num;
