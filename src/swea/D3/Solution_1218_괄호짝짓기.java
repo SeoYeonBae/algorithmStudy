@@ -42,7 +42,10 @@ public class Solution_1218_괄호짝짓기 {
 			else
 				sb.append("0").append("\n");
 		}
+		
 		System.out.println(sb);
+		
 	}
+
 
 }
