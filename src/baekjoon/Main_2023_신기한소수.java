@@ -8,32 +8,35 @@ import java.util.List;
 
 public class Main_2023_신기한소수 {
 
+	static int N;
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		List<Integer> init = new ArrayList<>();
-		for (int i = 3; i < 10; i++)
-			if (isPrime(i))
-				init.add(i);
-
+		String[] init = {"2", "3", "5", "7"};
+		
+		
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		int N = Integer.parseInt(in.readLine());
-
-		for (int i = 2; i < 10; i++) {
-			if (isPrime(i)) {
-				String s = Integer.toString(i);
-				for (int j = 0; j < N - 1; j++) {
-					for (int k = 1; k < 9; k++)
-						if (isPrime(Integer.parseInt(s + k))) {
-							s = s + Integer.toString(k);
-							if (s.length() == 4)
-								System.out.println(s);
-						}
-				}
-			}
+		N = Integer.parseInt(in.readLine());
+		
+		for(int i = 0; i < 4; i++) {
+			makeNum(init[i]);
 		}
-
 	}
 
-	public static boolean isPrime(int num) {
+	private static void makeNum(String num) {
+		String[] after = {"1", "3", "7", "9"};
+		
+		if(num.length() == N) {
+			System.out.println(num);
+			return;
+		}
+		for(int i = 0; i < 4; i++) {
+			if(isPrime(Integer.parseInt(num + after[i]))) {
+				makeNum(num + after[i]);
+			}
+		}
+		
+	}
+
+	private static boolean isPrime(int num) {
 		for (int i = 2; i < Math.sqrt(num) + 1; i++)
 			if (num % i == 0)
 				return false;
