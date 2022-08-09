@@ -42,6 +42,7 @@ public class Solution_6808_규영이와인영이의카드게임 {
 			sb.append("#").append(tc).append(" ").append(gyuWin).append(" ").append(362880 - gyuWin).append("\n");
 		}
 		System.out.println(sb);
+		br.close();
 	}
 	static void perm(int cnt) {
 		if(cnt == 9) {
