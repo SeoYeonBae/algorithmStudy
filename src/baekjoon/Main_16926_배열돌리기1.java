@@ -62,6 +62,7 @@ public class Main_16926_배열돌리기1 {
 		}
 		
 		System.out.println(sb);
+		br.close();
 	}
 	
 }
