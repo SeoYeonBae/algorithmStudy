@@ -5,15 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Main_17406_배열돌리기4 {
 
 	static int rec, K;
 	static int[][] map, originalMap;
-	static Stack<Integer> stack = new Stack<>();
-	
+
+	// 순열을 만들기 위한 변수
 	static List<int[]> perms;
 	static int[] numbers;
 	static boolean[] isSelected;
