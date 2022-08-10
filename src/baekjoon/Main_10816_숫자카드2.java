@@ -36,6 +36,7 @@ public class Main_10816_숫자카드2 {
 		int rightIdx;
 		
 		for(int i = 0; i < M; i++) {
+			System.out.println(card[i]);
 			leftIdx = left(card[i], 0, N - 1);
 			rightIdx = right(card[i], 0, N - 1);
 			System.out.println("l : " + leftIdx);
@@ -46,10 +47,12 @@ public class Main_10816_숫자카드2 {
 	private static int left(int target, int start, int end) {
 		int mid = (start + end) / 2;
 		if(start > end)
-			return 0;
+			return start;
 		if(target <= dog[mid])
-			left(target, start, mid - 1);
-		return start;
+			return left(target, start, mid - 1);
+		else
+			return left(target, mid + 1, end);
+		
 		
 	}
 	
