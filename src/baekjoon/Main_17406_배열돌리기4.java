@@ -28,17 +28,14 @@ public class Main_17406_배열돌리기4 {
 		
 		// 배열 초기화
 		map = new int[N][M];
+		originalMap = new int[N][M];
 		for(int i = 1; i < N; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
-			for(int j = 1; j < M; j++)
+			for(int j = 1; j < M; j++) {
 				map[i][j] = Integer.parseInt(st.nextToken());
+				originalMap[i][j] = map[i][j];	// 초기화를 위한 오리지널 배열 저장
+			}
 		}
-		
-		// 초기화를 위한 오리지널 배열 저장
-		originalMap = new int[N][M];
-		for(int i = 0; i < N; i ++)
-			for(int j = 0; j < M; j++)
-				originalMap[i][j] = map[i][j];
 		
 		isSelected = new boolean[K]; 	// 순열 만들 때 체크할 용도
 		numbers = new int[K]; 			// 각 줄의 인덱스를 담을 배열
@@ -92,8 +89,7 @@ public class Main_17406_배열돌리기4 {
 			for(int i = 0; i < K; i++)
 				tmp[i] = numbers[i];
 			perms.add(tmp);
-			return;
-			
+			return;	
 		}
 		
 		for(int i = 0; i < K; i++) {
