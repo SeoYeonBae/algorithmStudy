@@ -12,7 +12,7 @@ public class Main_10816_숫자카드2 {
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		
+		StringBuilder sb = new StringBuilder();
 		StringTokenizer st;
 		
 		// 상근이 카드
@@ -30,38 +30,54 @@ public class Main_10816_숫자카드2 {
 			card[i] = Integer.parseInt(st.nextToken());
 		
 		Arrays.sort(dog);
-		System.out.println(Arrays.toString(dog));
 		// 오른쪽 인덱스 - 왼쪽인덱스 = 중복된 개수
 		int leftIdx;
 		int rightIdx;
 		
 		for(int i = 0; i < M; i++) {
-			System.out.println(card[i]);
 			leftIdx = left(card[i], 0, N - 1);
 			rightIdx = right(card[i], 0, N - 1);
-			System.out.println("l : " + leftIdx);
-			System.out.println("r : " + rightIdx);
+			if(leftIdx == -1)
+				sb.append(0).append(" ");
+			else
+				sb.append(rightIdx - leftIdx + 1).append(" ");
 		}
+		
+		System.out.println(sb);
 	}
 
 	private static int left(int target, int start, int end) {
-		int mid = (start + end) / 2;
-		if(start > end)
-			return start;
-		if(target <= dog[mid])
-			return left(target, start, mid - 1);
-		else
-			return left(target, mid + 1, end);
-		
+		int mid;
+		int res = -1;
+		while(start <= end) {
+			mid = (start + end) / 2;
+			if(target == dog[mid]) {
+				res = mid;
+				end = mid - 1;
+			}
+			else if(target < dog[mid])
+				end = mid - 1;
+			else
+				start = mid + 1;
+		}
+		return res;
 		
 	}
 	
 	private static int right(int target, int start, int end) {
-		int mid = (start + end) / 2;
-		if(start > end)
-			return 0;
-		if(target >= dog[mid])
-			right(target, mid + 1, end);
-		return start;
+		int mid;
+		int res = -1;
+		while(start <= end) {
+			mid = (start + end) / 2;
+			if(target == dog[mid]) {
+				res = mid;
+				start = mid + 1;
+			}
+			else if(target < dog[mid])
+				end = mid - 1;
+			else
+				start = mid + 1;
+		}
+		return res;
 	}
 }
