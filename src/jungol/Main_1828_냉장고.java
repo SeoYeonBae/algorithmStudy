@@ -21,10 +21,8 @@ public class Main_1828_냉장고 {
 		Arrays.sort(chemical, new Comparator<int[]>() { // 최고 기온 비교한 다음 최저 기온으로 오름차순 정렬 -> 최저 기온 따질 필요 x
 			@Override
 			public int compare(int[] o1, int[] o2) {
-				if(o1[1] < o2[1])
-					return 1;	
-				else if(o1[1] > o2[1])
-					return -1;
+				if(o1[1] != o2[1])
+					return o1[1] - o2[1];
 				else
 					return o1[0] - o2[0];
 					
