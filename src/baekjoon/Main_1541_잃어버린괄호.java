@@ -23,10 +23,6 @@ public class Main_1541_잃어버린괄호 {
 			else
 				res -= sum;
 		}
-		
-		System.out.println(res);
-		
-		
+		System.out.println(res);			
 	}
-	
 }
