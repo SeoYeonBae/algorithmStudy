@@ -1,0 +1,60 @@
+package baekjoon;
+
+import java.io.*;
+import java.util.StringTokenizer;
+
+public class Main_3109_빵집 {
+
+	static int R, C, res, max;
+	static char[][] map;
+	static int[] dr = {-1, 0, 1};
+	static int[] dc = {1, 1, 1};
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+
+		map = new char[R][C];
+		for (int i = 0; i < R; i++) {
+			String s = br.readLine();
+			for (int j = 0; j < C; j++) {
+				map[i][j] = s.charAt(j);
+			}
+		}
+
+		for(int i = 0; i < R; i++)
+			pipe(i, 0);
+
+		System.out.println(res);
+	}
+
+	private static void pipe(int r, int c) {
+		int nr, nc;
+
+		for(int d = 0; d < 3; d++) {
+			nr = r + dr[d];
+			nc = c + dc[d];
+			System.out.println(nr + " " + nc);
+
+			if(nr < 0 || nr >= R || nc < 0 || nc >= C)
+				continue;
+
+			System.out.println(map[nr][nc]);
+			if(map[nr][nc] != '.')
+				continue;
+
+			map[nr][nc] = '#';
+
+			if(nc == C) {
+				System.out.println("여기야");
+				res++;
+			}
+			System.out.println("가자");
+			pipe(nr, nc);
+		}
+	}
+	
+}
