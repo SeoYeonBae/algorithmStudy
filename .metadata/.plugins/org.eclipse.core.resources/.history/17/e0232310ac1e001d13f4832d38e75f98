@@ -1,0 +1,22 @@
+package baekjoon;
+
+import java.io.*;
+import java.util.StringTokenizer;
+
+public class Main_1931_회의실배정 {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		
+		int N = Integer.parseInt(br.readLine());
+		int[][] meetingTime = new int[N][2];
+		
+		for (int i = 0; i < N; i++) {
+			st = new StringTokenizer(br.readLine(), " ");
+			meetingTime[i][0] = Integer.parseInt(st.nextToken());
+			meetingTime[i][1] = Integer.parseInt(st.nextToken());
+		}
+		
+	}
+}
