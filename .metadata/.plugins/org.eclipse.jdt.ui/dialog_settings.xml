@@ -20,6 +20,7 @@
 	</section>
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
+		<item value="false" key="configure_problem_severity_dialog_id"/>
 	</section>
 	<section name="DialogBounds_OverrideMethodDialog">
 		<item value="539" key="DIALOG_WIDTH"/>

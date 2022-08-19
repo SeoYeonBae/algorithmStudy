@@ -79,49 +79,24 @@ public class Main_17135_캐슬디펜스 {
 	private static int game() {
 		
 		while(enemy.size() != 0) {
-			List<Integer> attack = new ArrayList<Integer>();
-			int distMin, minIdx, removeIdx;
 			for(int i = 0; i < 3; i++) {
-				distMin = Integer.MAX_VALUE;
-				minIdx = Integer.MAX_VALUE;
-				removeIdx = -1;
+				int distMin = Integer.MAX_VALUE;
+				int minIdx = -1;
 				for(int j = 0; j < enemy.size(); j++) {
 					int dist = Math.abs(N - enemy.get(j)[0]) + Math.abs(numbers[i] - enemy.get(j)[1]);
-					System.out.println(N + " - " + numbers[i] + " - " + enemy.get(j)[0] + " - " + enemy.get(j)[1] + " dist : " + dist);
 					if(dist <= D && dist <= distMin && enemy.get(j)[1] < minIdx) {
 						System.out.println(N + "-" + numbers[i]);
 						System.out.println(enemy.get(j)[0] + "-" + enemy.get(j)[1] + " 차이는? " + dist);
-						if(dist == distMin) {	// 거리가 같을 때는 왼쪽값 사용
-							if(enemy.get(j)[1] < minIdx) {
-//								System.out.println(N + "-" + numbers[i]);
-//								System.out.println(enemy.get(j)[0] + "-" + enemy.get(j)[1] + " 차이는? " + dist);
-								minIdx = enemy.get(j)[1];
-								removeIdx = j;
-							}
-						}else if(dist < distMin){
-//							System.out.println(N + "-" + numbers[i]);
-//							System.out.println(enemy.get(j)[0] + "-" + enemy.get(j)[1] + " 차이는? " + dist);
-							minIdx = enemy.get(j)[1];
-							removeIdx = j;
-							distMin = dist;
-						}
+						minIdx = j;
+						distMin = dist;
 					}
-					
 				}
-				if(removeIdx != -1 && !attack.contains(removeIdx)) {
-					attack.add(removeIdx);						
+				if(minIdx != -1) {
+					System.out.println("제거" + enemy.get(minIdx)[0] + "-" + enemy.get(minIdx)[1]);
+					kill++;
+					enemy.remove(minIdx);						
 				}
 			}
-			
-			for(int i = 0; i < attack.size(); i++) {
-				System.out.println("제거" + enemy.get(attack.get(i))[0] + "-" + enemy.get(attack.get(i))[1]);
-				kill++;
-				System.out.println(attack.get(i));
-				int num = attack.get(i);
-				enemy.remove(num);
-			}
-			attack.clear();
-			
 			int len = enemy.size();
 			for(int i = len - 1; i >= 0; i--) {
 				System.out.println("남은 친구는? " + enemy.get(i)[0] + " - " + enemy.get(i)[1]);

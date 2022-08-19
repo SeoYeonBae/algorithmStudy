@@ -80,12 +80,12 @@ public class Main_17135_캐슬디펜스 {
 		
 		while(enemy.size() != 0) {
 			List<Integer> attack = new ArrayList<Integer>();
-			int distMin, minIdx, removeIdx;
 			for(int i = 0; i < 3; i++) {
-				distMin = Integer.MAX_VALUE;
-				minIdx = Integer.MAX_VALUE;
-				removeIdx = -1;
 				for(int j = 0; j < enemy.size(); j++) {
+					int distMin = Integer.MAX_VALUE;
+					int minIdx = Integer.MAX_VALUE;
+					int removeIdx = -1;
+					
 					int dist = Math.abs(N - enemy.get(j)[0]) + Math.abs(numbers[i] - enemy.get(j)[1]);
 					System.out.println(N + " - " + numbers[i] + " - " + enemy.get(j)[0] + " - " + enemy.get(j)[1] + " dist : " + dist);
 					if(dist <= D && dist <= distMin && enemy.get(j)[1] < minIdx) {

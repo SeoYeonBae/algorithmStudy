@@ -80,33 +80,28 @@ public class Main_17135_캐슬디펜스 {
 		
 		while(enemy.size() != 0) {
 			List<Integer> attack = new ArrayList<Integer>();
-			int distMin, minIdx, removeIdx;
 			for(int i = 0; i < 3; i++) {
-				distMin = Integer.MAX_VALUE;
-				minIdx = Integer.MAX_VALUE;
-				removeIdx = -1;
+				int distMin = Integer.MAX_VALUE;
+				int minIdx = Integer.MAX_VALUE;
+				int removeIdx = -1;
 				for(int j = 0; j < enemy.size(); j++) {
 					int dist = Math.abs(N - enemy.get(j)[0]) + Math.abs(numbers[i] - enemy.get(j)[1]);
-					System.out.println(N + " - " + numbers[i] + " - " + enemy.get(j)[0] + " - " + enemy.get(j)[1] + " dist : " + dist);
 					if(dist <= D && dist <= distMin && enemy.get(j)[1] < minIdx) {
-						System.out.println(N + "-" + numbers[i]);
-						System.out.println(enemy.get(j)[0] + "-" + enemy.get(j)[1] + " 차이는? " + dist);
 						if(dist == distMin) {	// 거리가 같을 때는 왼쪽값 사용
 							if(enemy.get(j)[1] < minIdx) {
-//								System.out.println(N + "-" + numbers[i]);
-//								System.out.println(enemy.get(j)[0] + "-" + enemy.get(j)[1] + " 차이는? " + dist);
+								System.out.println(N + "-" + numbers[i]);
+								System.out.println(enemy.get(j)[0] + "-" + enemy.get(j)[1] + " 차이는? " + dist);
 								minIdx = enemy.get(j)[1];
 								removeIdx = j;
 							}
 						}else if(dist < distMin){
-//							System.out.println(N + "-" + numbers[i]);
-//							System.out.println(enemy.get(j)[0] + "-" + enemy.get(j)[1] + " 차이는? " + dist);
+							System.out.println(N + "-" + numbers[i]);
+							System.out.println(enemy.get(j)[0] + "-" + enemy.get(j)[1] + " 차이는? " + dist);
 							minIdx = enemy.get(j)[1];
 							removeIdx = j;
 							distMin = dist;
 						}
 					}
-					
 				}
 				if(removeIdx != -1 && !attack.contains(removeIdx)) {
 					attack.add(removeIdx);						
@@ -116,10 +111,9 @@ public class Main_17135_캐슬디펜스 {
 			for(int i = 0; i < attack.size(); i++) {
 				System.out.println("제거" + enemy.get(attack.get(i))[0] + "-" + enemy.get(attack.get(i))[1]);
 				kill++;
-				System.out.println(attack.get(i));
-				int num = attack.get(i);
-				enemy.remove(num);
+				enemy.remove(attack.get(i));
 			}
+//			System.out.println("제거" + enemy.get(removeIdx)[0] + "-" + enemy.get(removeIdx)[1]);
 			attack.clear();
 			
 			int len = enemy.size();
