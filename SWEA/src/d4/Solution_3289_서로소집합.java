@@ -56,7 +56,7 @@ public class Solution_3289_서로소집합 {
 						sb.append(1);
 					else
 						sb.append(0);
-				} else { // 두 원소를 합치는 0 a b 연산
+				} else { 									// 두 원소를 합치는 0 a b 연산
 					union(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
 				}
 			}
