@@ -31,8 +31,8 @@ public class Solution_7465_창용마을무리의개수 {
 				union(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
 			}
 			
-			for(int i = 1; i < N; i++) {
-				if(find(i) == i)
+			for(int i = 1; i < N; i++) {	
+				if(find(i) == i)	// union으로 합쳐줬기 때문에 부모와 자기 자신이 같은 경우가 마을의 수
 					res++;
 			}
 			sb.append("#").append(tc).append(" ").append(res).append("\n");
@@ -42,10 +42,6 @@ public class Solution_7465_창용마을무리의개수 {
 		bw.append(sb.toString());
 		bw.flush();
 		bw.close();
-	}
-
-	static void make() {
-		
 	}
 
 	static int find(int a) {
