@@ -42,7 +42,6 @@ public class Main_13023_ABCDE {
 		}
 
 		for (int i = 0; i < M; i++) {
-			System.out.println("-----------------");
 			visited = new boolean[N];
 			dfs(i, 0);
 			if(res == 1)	// 친구 관계가 있는 그래프는 탐색 안 해도 됨
