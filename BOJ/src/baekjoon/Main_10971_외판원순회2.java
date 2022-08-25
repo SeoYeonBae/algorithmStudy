@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_10971_외판원순회 {
+public class Main_10971_외판원순회2 {
 	static int N, ans = Integer.MAX_VALUE;
 	static int[][] adjMap;
 	static boolean[] visited;
