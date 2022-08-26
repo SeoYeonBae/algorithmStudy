@@ -77,12 +77,6 @@ public class Main_4485_녹색옷입은애가젤다지 {
 					q.offer(new int[] {nr, nc});
 				}
 				
-				for (int i = 0; i < N; i++) {
-					for (int j = 0; j < N; j++) {
-						System.out.print(rupee[i][j] + " ");
-					}
-					System.out.println();
-				}
 			}
 		}
 
