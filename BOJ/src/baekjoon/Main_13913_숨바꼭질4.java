@@ -45,8 +45,11 @@ public class Main_13913_숨바꼭질4 {
 	}
 	
 	private static void bfs() {
+		
 		while(!q.isEmpty()) {
+			
 			int num = q.poll();
+			
 			if(num == K) {
 				System.out.println(dp[num]);
 				while(num != N) {	// 직전 숫자를 거꾸로 따라감
@@ -56,6 +59,7 @@ public class Main_13913_숨바꼭질4 {
 				sb.insert(0,  num + " ");
 				return;
 			}
+			
 			int[] nums = {num - 1, num + 1, num * 2};
 			for(int n : nums) {
 				// 범위 내에 있고 한 번도 방문 안 한 곳 왜냐면 방문 했던 곳이면 과거에 걍 거기서 출발하는 게 베스트
