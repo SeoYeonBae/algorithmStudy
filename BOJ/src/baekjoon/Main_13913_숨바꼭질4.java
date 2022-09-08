@@ -62,8 +62,7 @@ public class Main_13913_숨바꼭질4 {
 			
 			int[] nums = {num - 1, num + 1, num * 2};
 			for(int n : nums) {
-				// 범위 내에 있고 한 번도 방문 안 한 곳 왜냐면 방문 했던 곳이면 과거에 걍 거기서 출발하는 게 베스트
-				if(n < 0 || n > 100000 || dp[n] != -1) continue;	
+				if(n < 0 || n > 100000 || dp[n] != -1) continue;	// 범위 내에 없거나 방문 했던 곳이면 무시 방문 했던 곳이면 과거에 걍 거기서 출발하는 게 베스트
 				dp[n] = dp[num] + 1;
 				path[n] = num;
 				q.offer(n);
