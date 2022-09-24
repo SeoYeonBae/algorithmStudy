@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 import java.sql.Array;
 import java.util.*;
 
-public class Main_15654_N과M9 {
+public class Main_15663_N과M9 {
 
 	static int N, M;
 	static int[] input, numbers;
