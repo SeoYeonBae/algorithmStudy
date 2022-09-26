@@ -5,15 +5,13 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.sql.Array;
 import java.util.*;
 
-public class Main_15654_N과M9 {
+public class Main_15666_N과M12 {
 
 	static int N, M;
 	static int[] input, numbers;
 	static StringBuilder sb;
-	static boolean[] visited;
 	static HashSet<String> tmp;
 
 	public static void main(String[] args) throws IOException {
@@ -28,7 +26,6 @@ public class Main_15654_N과M9 {
 
 		input = new int[N];
 		numbers = new int[M];
-		visited = new boolean[N];
 		tmp = new HashSet<>();
 
 		st = new StringTokenizer(br.readLine());
@@ -57,12 +54,11 @@ public class Main_15654_N과M9 {
 		}
 
 		for (int i = start; i < N; i++) {
-			if (visited[i] == true)
-				continue;
-			visited[i] = true;
+			if(count > 0)
+				if(numbers[count - 1] > input[i])
+					continue;
 			numbers[count] = input[i];
 			comb(count + 1, start);
-			visited[i] = false;
 		}
 
 	}
