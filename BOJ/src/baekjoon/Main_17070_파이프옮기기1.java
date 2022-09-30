@@ -31,8 +31,6 @@ public class Main_17070_파이프옮기기1 {
 	}
 
 	private static void pipe(int r, int c, int dir) {
-		System.out.println("dir : " + dir);
-		System.out.println(r + "-" + c);
 		if (r == N - 1 && c == N - 1) {
 			res++;
 			return;
@@ -47,7 +45,6 @@ public class Main_17070_파이프옮기기1 {
 			if (map[r][nc] != 0)
 				break;
 
-			System.out.println("가로로");
 			pipe(r, nc, 0);
 			break;
 		case 1: // 세로를 세로로
@@ -60,20 +57,17 @@ public class Main_17070_파이프옮기기1 {
 				break;
 
 			pipe(nr, c, 1);
-			System.out.println("세로로");
 			break;
 		case 2: // 대각선을 가로 세로로
 			for (int i = 0; i < 2; i++) {
 				nr = r + dr[i];
 				nc = c + dc[i];
-				System.out.println(nr + "-----" + nc);
 				if (nr >= N || nc >= N)
 					continue;
 
 				if (map[nr][nc] != 0)
 					continue;
 
-				System.out.println("대각선을 가로 혹은 세로로");
 				pipe(nr, nc, i);
 			}
 			break;
@@ -87,8 +81,6 @@ public class Main_17070_파이프옮기기1 {
 		
 		if(map[r][nc] != 0 || map[nr][c] != 0 || map[nr][nc] != 0)
 			return;
-		System.out.println(nr + "-" + nc);
-		System.out.println("대각선으로");
 		pipe(nr, nc, 2);
 	}
 }
