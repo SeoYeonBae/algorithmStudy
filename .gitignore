@@ -1,5 +1,7 @@
 .metadata/.
 .recommenders/.
+.classpath
+.project
 
 # Created by https://www.toptal.com/developers/gitignore/api/java,eclipse
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,eclipse
