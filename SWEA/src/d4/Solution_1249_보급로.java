@@ -7,8 +7,8 @@ public class Solution_1249_보급로 {
 
 	static int N;
 	static int[][] map;
-	static int[] dr = {1, 0, -1, 0};
-	static int[] dc = {0, 1, 0, -1};
+	static int[] dr = {1, 0};
+	static int[] dc = {0, 1};
 	static boolean[][] visited;
 	static int[][] res;
 	public static void main(String[] args) throws IOException {
@@ -64,7 +64,7 @@ public class Solution_1249_보급로 {
 			int c = q.peek()[1];
 			q.poll();
 			
-			for (int i = 0; i < 4; i++) {
+			for (int i = 0; i < 2; i++) {
 				int nr = r + dr[i];
 				int nc = c + dc[i];
 				
