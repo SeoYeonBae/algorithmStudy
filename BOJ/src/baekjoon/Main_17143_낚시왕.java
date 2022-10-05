@@ -17,8 +17,8 @@ public class Main_17143_낚시왕 {
 		StringTokenizer st;
 
 		st = new StringTokenizer(br.readLine());
-		R = Integer.parseInt(st.nextToken()) + 1;
-		C = Integer.parseInt(st.nextToken()) + 1;
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 
 		if (M == 0) {
@@ -26,7 +26,7 @@ public class Main_17143_낚시왕 {
 			System.exit(0);
 		}
 
-		map = new int[R][C];
+		map = new int[R + 1][C + 1];
 		sharks = new HashMap<>();
 
 		for (int i = 0; i < M; i++) {
@@ -37,9 +37,9 @@ public class Main_17143_낚시왕 {
 			int d = Integer.parseInt(st.nextToken());
 			int z = Integer.parseInt(st.nextToken());
 			if (d < 3)
-				s %= (2 * (R - 2));
+				s %= (2 * (R - 1));
 			else
-				s %= (2 * (C - 2));
+				s %= (2 * (C - 1));
 			map[r][c] = z;
 			sharks.put(z, new info(r, c, s, d, z));
 		}
@@ -51,8 +51,8 @@ public class Main_17143_낚시왕 {
 	private static int go() {
 		int res = 0;
 
-		for (int i = 1; i < C; i++) {
-			for (int j = 1; j < R; j++) {
+		for (int i = 1; i <= C; i++) {
+			for (int j = 1; j <= R; j++) {
 				if (map[j][i] > 0) {
 					res += map[j][i];
 					sharks.remove(map[j][i]);
@@ -68,7 +68,7 @@ public class Main_17143_낚시왕 {
 
 	private static void move() {
 
-		int[][] newMap = new int[R][C];
+		int[][] newMap = new int[R + 1][C + 1];
 		List<Integer> remove = new ArrayList<>();
 
 		for (int key : sharks.keySet()) {
@@ -79,15 +79,15 @@ public class Main_17143_낚시왕 {
 				if (cur.r < 1) {
 					cur.r = 2 - cur.r;
 					cur.d = 2;
-					if (cur.r > R - 1) {
-						cur.r = 2 * (R - 1) - cur.r;
+					if (cur.r > R) {
+						cur.r = 2 * R - cur.r;
 						cur.d = 1;
 					}
 				}
 			} else if (cur.d == 2) {
 				cur.r += cur.s;
-				if (cur.r > R - 1) {
-					cur.r = 2 * (R - 1) - cur.r;
+				if (cur.r > R) {
+					cur.r = 2 * R - cur.r;
 					cur.d = 1;
 					if (cur.r < 1) {
 						cur.r = 2 - cur.r;
@@ -96,8 +96,8 @@ public class Main_17143_낚시왕 {
 				}
 			} else if (cur.d == 3) {
 				cur.c += cur.s;
-				if (cur.c > C - 1) {
-					cur.c = 2 * (C - 1) - cur.c;
+				if (cur.c > C) {
+					cur.c = 2 * C - cur.c;
 					cur.d = 4;
 					if (cur.c < 1) {
 						cur.c = 2 - cur.c;
@@ -109,8 +109,8 @@ public class Main_17143_낚시왕 {
 				if (cur.c < 1) {
 					cur.c = 2 - cur.c;
 					cur.d = 3;
-					if (cur.c > C - 1) {
-						cur.c = 2 * (C - 1) - cur.c;
+					if (cur.c > C) {
+						cur.c = 2 * C - cur.c;
 						cur.d = 4;
 					}
 				}
@@ -128,8 +128,8 @@ public class Main_17143_낚시왕 {
 		for (int re : remove) {
 			sharks.remove(re);
 		}
-		for (int i = 1; i < R; i++) {
-			System.arraycopy(newMap[i], 1, map[i], 1, C - 1);
+		for (int i = 1; i <= R; i++) {
+			System.arraycopy(newMap[i], 1, map[i], 1, C);
 		}
 	}
 
