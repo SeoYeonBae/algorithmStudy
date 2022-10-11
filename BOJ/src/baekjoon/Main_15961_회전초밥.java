@@ -26,31 +26,30 @@ public class Main_15961_회전초밥 {
 			sushi[i] = Integer.parseInt(br.readLine());
 		}
 
-		List<Integer> customer = new ArrayList<Integer>();
-		int max = 0;
+		int[] customer = new int[d + 1];
+		Arrays.fill(customer, 0);
+		int cnt = 0;
 		for (int i = 0; i < k; i++) {
-			if (!customer.contains(sushi[i]))
-				max++;
-			customer.add(sushi[i]);
-		}
-		if (!customer.contains(c))
-			max++;
-		int cnt = max;
-		for (int i = 0; i < N - 1; i++) {
-			int rm = customer.get(0);
-			customer.remove(0);
-			if (!customer.contains(rm))
-				cnt--;
-			if (!customer.contains(sushi[(i + k) % N]))
+			if (customer[sushi[i]] == 0)
 				cnt++;
-			customer.add(sushi[(i + k) % N]);
-
-			if (!customer.contains(c))
-				max = max < cnt + 1 ? cnt + 1 : max;
-			else
-				max = max < cnt ? cnt : max;
+			customer[sushi[i]]++;
 		}
-
+		int max = cnt;
+		for (int i = 1; i < N; i++) {
+			if(max <= cnt) {
+				if(customer[c] == 0)
+					max = cnt + 1;
+				else
+					max = cnt;
+			}
+			customer[sushi[i-1]]--;
+			if(customer[sushi[i-1]] == 0)
+				cnt--;
+			
+			if(customer[sushi[(i + k - 1) % N]] == 0)
+				cnt++;
+			customer[sushi[(i + k - 1) % N]]++;
+		}
 		System.out.println(max);
 	}
 }
