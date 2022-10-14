@@ -41,6 +41,7 @@ public class Main_19236_청소년상어 {
 		eatCnt += fishNum;	// 자리에 있던 물고기 크기 더하기
 		newFishInfo.remove(fishNum);		// map에 있는 거 묵기
 		newMap[sharkR][sharkC] = 0;	// 먹은 자리에 상어 넣기
+		System.out.println("상어 먹기!!!!! " + fishNum);
 		if(res < eatCnt)
 			res = eatCnt;
 		
@@ -84,6 +85,12 @@ public class Main_19236_청소년상어 {
 				break;
 			}
 
+	        for (int k = 0; k < 4; k++) {
+	            for (int j = 0; j < 4; j++) {
+	                System.out.print(newMap[k][j] + " ");
+	            }
+	            System.out.println();
+	        }
 		}
 	
 		// 3. 상어 이동하기
