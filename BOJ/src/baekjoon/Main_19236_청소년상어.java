@@ -83,7 +83,6 @@ public class Main_19236_청소년상어 {
 				
 				break;
 			}
-
 		}
 	
 		// 3. 상어 이동하기
