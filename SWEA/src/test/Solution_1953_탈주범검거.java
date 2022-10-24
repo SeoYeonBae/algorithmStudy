@@ -56,7 +56,8 @@ public class Solution_1953_탈주범검거 {
 			}
 
 			res = 1;
-			bfs(R, C, 1);
+			if(L != 1)
+				bfs(R, C, 1);
 			sb.append("#").append(tc).append(" ").append(res).append("\n");
 		}
 		br.close();
