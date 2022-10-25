@@ -23,7 +23,25 @@ public class Solution_1945_간단한소인수분해 {
 			d = 0;
 			e = 0;
 
-			divisor(N);
+			while(N != 1) {
+				if(N % 2 == 0) {
+					a++;
+					N = N / 2;
+				} else if(N % 3 == 0){
+					b++;
+					N = N / 3;
+				} else if(N % 5 == 0){
+					c++;
+					N = N / 5;
+				} else if(N % 7 == 0){
+					d++;
+					N = N / 7;
+				} else if(N % 11 == 0){
+					e++;
+					N = N / 11;
+				}
+			}
+			
 			sb.append("#").append(tc).append(" ").append(a).append(" ").append(b).append(" ").append(c).append(" ")
 					.append(d).append(" ").append(e).append("\n");
 		}
@@ -34,28 +52,4 @@ public class Solution_1945_간단한소인수분해 {
 		bw.close();
 	}
 
-	private static void divisor(int n) {
-		for (int i = 1; i < Math.sqrt(n); i++) {
-			if (n % i == 0) {
-				if (i == 2)
-					a++;
-				else if (i == 3)
-					b++;
-				else if (i == 5)
-					c++;
-				else if (i == 7)
-					d++;
-				else if (i == 11)
-					e++;
-				else if(i * i == n)
-					divisor(i);
-				else {
-					divisor(i);
-					divisor(n / i);
-				}
-				return;
-			}
-		}
-
-	}
 }
