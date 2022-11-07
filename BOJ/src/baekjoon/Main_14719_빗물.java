@@ -7,8 +7,6 @@ public class Main_14719_빗물 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		StringBuilder sb = new StringBuilder();
 		StringTokenizer st;
 		
 		st = new StringTokenizer(br.readLine());
@@ -42,13 +40,7 @@ public class Main_14719_빗물 {
 				}
 			}
 		}
-		for (int i = 0; i < H; i++) {
-			System.out.println(Arrays.toString(map[i]));
-		}
 		System.out.println(res);
 		br.close();
-		bw.append(sb.toString());
-		bw.flush();
-		bw.close();
 	}
 }
