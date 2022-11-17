@@ -22,10 +22,14 @@ public class Solution_8382_방향전환_re {
 
 			int X = Math.abs(finishR - startR);
 			int Y = Math.abs(finishC - startC);
-			
-			int tmp = (X + Y) / 2;
-			int res = Math.abs(X - tmp) + Math.abs(Y - tmp) + 2 * tmp;
 
+			int res = 0;
+			if (X > Y) {
+				res = 2 * X - (X - Y) % 2;
+			} else {
+				res = 2 * Y - (Y - X) % 2;
+			}
+			
 			sb.append("#").append(tc).append(" ").append(res).append("\n");
 		}
 		br.close();
