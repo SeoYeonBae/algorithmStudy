@@ -41,7 +41,7 @@ public class Main_1916_최소비용구하기 {
 
 		Arrays.fill(visited, false);
 		Arrays.fill(dijk, Integer.MAX_VALUE);
-		dijk[start] = 0;
+		dijk[start] = 0;	// 출발지에서 출발지는 0
 
 		int min, minV;
 
@@ -61,6 +61,7 @@ public class Main_1916_최소비용구하기 {
 				break;
 			
 			for (int j = 0; j <= N; j++) {
+				// 아직 방문 안 했고, 갈 수 있는 버스가 있고, 경유해서 가는 게 더 빠르면 갱신
 				if(!visited[j] && adjMap[minV][j] != INF && dijk[j] > dijk[minV] + adjMap[minV][j])
 					dijk[j] = dijk[minV] + adjMap[minV][j];
 			}
