@@ -9,7 +9,7 @@ public class Main_1789_수들의합 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		long S = Integer.parseInt(br.readLine()); // 만들어야 하는 수
+		long S = Long.parseLong(br.readLine()); // 만들어야 하는 수
 
 		long N = 0; // S륾 만드는 N개의 자연수 최댓값
 		long sum = 0;
