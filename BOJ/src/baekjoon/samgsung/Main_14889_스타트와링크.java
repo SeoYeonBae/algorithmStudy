@@ -69,46 +69,26 @@ public class Main_14889_스타트와링크 {
 		}
 	}
 	private static void calc() {
+		// 스타트 팀에 있는 모든 구성원의 능력치 합을 구함
 		sumA = 0;
-		a = new int[N / 2];
-		combA(0, 0);
+		for (int i = 0; i < N / 2; i++) {
+			for (int j = 0; j < N / 2; j++) {
+				sumA += adjMap[A.get(i)][A.get(j)];
+			}
+		}
+		// 링크 팀에 있는 모든 구성원의 능력치 합을 구함
 		sumB = 0;
-		b = new int[N / 2];
-		combB(0, 0);
+		for (int i = 0; i < N / 2; i++) {
+			for (int j = 0; j < N / 2; j++) {
+				sumB += adjMap[B.get(i)][B.get(j)];
+			}
+		}
 		
 		min = Math.min(min, Math.abs(sumA - sumB));
 		
 		if(min == 0) {	// 능력치의 최소는 0, 결과가 0이 되면 더이상 함수 진행하지 않아도 됨
 			System.out.println(0);
 			System.exit(0);
-		}
-	}
-	// 스타트 팀에 있는 모든 구성원의 능력치 합을 구함
-	private static void combA(int start, int cnt) {
-		if(cnt == 2) {
-			sumA += adjMap[a[0]][a[1]];
-			sumA += adjMap[a[1]][a[0]];
-			
-			return;
-		}
-		
-		for (int i = start; i < N / 2; i++) {
-			a[cnt] = A.get(i);
-			combA(i + 1, cnt + 1);
-		}
-	}
-	// 링크 팀에 있는 모든 구성원의 능력치 합을 구함
-	private static void combB(int start, int cnt) {
-		if(cnt == 2) {
-			sumB += adjMap[b[0]][b[1]];
-			sumB += adjMap[b[1]][b[0]];
-			
-			return;
-		}
-		
-		for (int i = start; i < N / 2; i++) {
-			b[cnt] = B.get(i);
-			combB(i + 1, cnt + 1);
 		}
 	}
 }
