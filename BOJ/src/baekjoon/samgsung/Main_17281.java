@@ -91,7 +91,7 @@ public class Main_17281 {
 	
 	// 현재 타자가 공을 쳐서 나가 있는 주자 달림
 	private static int run(int ord) {
-		for (int i = 3; i >= 0; i--) {
+		for (int i = 3; i > 0; i--) {
 			if(base[i] != 0) {
 				if(i + ord > 3) {
 					base[i] = 0;
