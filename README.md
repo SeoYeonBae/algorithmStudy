@@ -2,12 +2,12 @@
 
 ## :pushpin: commit message rule
 
-- feat: 새로운 알고리즘 문제 해결
-- modify: 풀었던 알고리즘 코드 수정
-- fix: 못 풀었던 문제 해결
-- comment: 주석 추가 or 수정 or 삭제
-- refactor: 성능에 관계 없는 코드 배치나 레포 구조 등 수정
-- update: 리드미 업데이트
+- Feat: 새로운 알고리즘 문제 해결
+- Modify: 풀었던 알고리즘 코드 수정
+- Fix: 못 풀었던 문제 해결
+- Comment: 주석 추가 or 수정 or 삭제
+- Refactor: 성능에 관계 없는 코드 배치나 레포 구조 등 수정
+- Docs: 리드미 업데이트
 
 <br/>
 
