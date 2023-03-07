@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 
-public class AplusB
+public class Main_AplusB
 {
     public static void main(String args[]) throws IOException
     {
