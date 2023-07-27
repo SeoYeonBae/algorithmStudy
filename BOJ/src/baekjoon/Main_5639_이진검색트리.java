@@ -46,7 +46,7 @@ public class Main_5639_이진검색트리 {
 		Node root = new Node(Integer.parseInt(br.readLine()));
 		while(true) {
 			String input = br.readLine();
-			if(input.equals(""))
+			if(input == null || input.equals(""))
 				break;
 			root.insert(Integer.parseInt(input));
 		}
